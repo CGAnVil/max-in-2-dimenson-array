@@ -25,8 +25,20 @@ public class Main {
             }
 
         }
-        int max = findMax(array);
-        System.out.println("Max value in array: " + max);
+//        int max = findMax(array);
+//        System.out.println("Max value in array: " + max);
+        showArray(array);
+        int totalColum = totalColum(array, 1);
+        System.out.println(totalColum);
+    }
+
+    public static void showArray(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + "\t");
+            }
+            System.out.println("");
+        }
     }
 
     public static int findMax(int[][] array) {
@@ -39,5 +51,13 @@ public class Main {
             }
         }
         return max;
+    }
+
+    public static int totalColum(int[][] array, int colum) {
+        int totalColum = 0;
+        for (int i = 0; i < array.length; i++) {
+            totalColum += array[i][colum];
+        }
+        return totalColum;
     }
 }
