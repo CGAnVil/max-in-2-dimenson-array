@@ -28,8 +28,11 @@ public class Main {
 //        int max = findMax(array);
 //        System.out.println("Max value in array: " + max);
         showArray(array);
-        int totalColum = totalColum(array, 1);
-        System.out.println(totalColum);
+//        int totalColum = totalColum(array, 1);
+//        System.out.println(totalColum);
+
+        int totalCross = totalCrossLine(array);
+        System.out.println(totalCross);
     }
 
     public static void showArray(int[][] array) {
@@ -59,5 +62,18 @@ public class Main {
             totalColum += array[i][colum];
         }
         return totalColum;
+    }
+
+    public static int totalCrossLine (int [][] array){
+        int totalCross = 0;
+        for (int i = 0; i < array.length; i++) {
+            for(int j = 0; j < array[i].length; j++){
+                if(i == j){
+                    totalCross+= array[i][j];
+                }
+            }
+
+        }
+        return totalCross;
     }
 }
